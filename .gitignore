@@ -1,0 +1,25 @@
+# Ignore OS generated files
+Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Icon?
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore logs
+*.log
+
+# Ignore node_modules if you add any JavaScript build tools later
+node_modules/
