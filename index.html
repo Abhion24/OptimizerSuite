@@ -4,13 +4,616 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PC Optimizer Suite: Boost, clean, and secure your Windows PC in one click.">
+    <meta name="keywords" content="PC optimizer, Windows optimization, system cleanup, registry cleaner, file tools, RAM optimizer, startup manager, privacy protector">
+    <meta name="author" content="Abhi Khade">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:title" content="PC Optimizer Suite">
     <meta property="og:description" content="Boost, clean, and secure your Windows PC in one click.">
     <meta property="og:type" content="website">
-    <title>PC Optimizer Suite</title>
+    <meta property="og:url" content="https://your-website-url.com">
+    <meta property="og:image" content="images/toolkit1.png">
+    <meta property="og:site_name" content="PC Optimizer Suite">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="PC Optimizer Suite">
+    <meta property="twitter:description" content="Boost, clean, and secure your Windows PC in one click.">
+    <meta property="twitter:image" content="images/toolkit1.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    
+    <title>PC Optimizer Suite - Boost, Clean & Secure Your PC</title>
+    <!-- Preconnect to Google Fonts for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #1E1E1E;
+            color: #E0E0E0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 4rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #FF6600;
+            color: #E0E0E0;
+        }
+
+        .btn-primary:hover {
+            background-color: #FF6600;
+            box-shadow: 0 0 15px #FF8533;
+            transform: scale(1.05);
+        }
+
+        .btn-large {
+            padding: 20px 40px;
+            font-size: 1.3rem;
+        }
+
+        /* Header/Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(43, 43, 43, 0.9);
+            z-index: 1000;
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-logo h2 {
+            color: #E0E0E0;
+            font-size: 1.8rem;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 2rem;
+        }
+
+        .nav-link {
+            color: #E0E0E0;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #FF6600;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #E0E0E0;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #1E1E1E 0%, #2B2B2B 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 49%, rgba(255, 102, 0, 0.05) 50%, transparent 51%),
+                linear-gradient(-45deg, transparent 49%, rgba(255, 102, 0, 0.05) 50%, transparent 51%);
+            background-size: 30px 30px;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .hero-title {
+            margin-bottom: 1rem;
+            font-size: 4rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #AAAAAA;
+            margin-bottom: 2rem;
+        }
+
+        .compatibility {
+            font-size: 0.9rem;
+            color: #AAAAAA;
+            margin-top: 1rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: #1E1E1E;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background-color: #2B2B2B;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .feature-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-card:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .feature-card:nth-child(3) {
+            transition-delay: 0.4s;
+        }
+
+        .feature-card:nth-child(4) {
+            transition-delay: 0.6s;
+        }
+
+        .feature-card:nth-child(5) {
+            transition-delay: 0.8s;
+        }
+
+        .feature-card:nth-child(6) {
+            transition-delay: 1s;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #FF6600;
+        }
+
+        .feature-title {
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            color: #AAAAAA;
+        }
+
+        /* Screenshots Section */
+        .screenshots {
+            padding: 5rem 0;
+            background-color: #2B2B2B;
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .screenshot-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .screenshot-item.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .screenshot-placeholder {
+            background-color: #1E1E1E;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #2B2B2B;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-placeholder:hover {
+            transform: scale(1.03);
+        }
+
+        .screenshot-placeholder img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .screenshot-caption {
+            padding: 1rem;
+            text-align: center;
+            color: #AAAAAA;
+            font-size: 0.9rem;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            padding: 5rem 0;
+            background-color: #1E1E1E;
+        }
+
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .why-choose-item {
+            text-align: center;
+            padding: 2rem;
+            background-color: #2B2B2B;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .why-choose-item.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .why-choose-item:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .why-choose-item:nth-child(3) {
+            transition-delay: 0.4s;
+        }
+
+        .why-choose-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #FF6600;
+        }
+
+        /* Download Section */
+        .download {
+            padding: 5rem 0;
+            background-color: #2B2B2B;
+            text-align: center;
+        }
+
+        .download-content {
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .download-content.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .download-info {
+            margin-top: 2rem;
+            color: #AAAAAA;
+            font-size: 0.9rem;
+        }
+
+        .download-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Support Section */
+        .support {
+            padding: 5rem 0;
+            background-color: #1E1E1E;
+        }
+
+        .support-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .support-form {
+            background-color: #2B2B2B;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .support-form.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            background-color: #1E1E1E;
+            color: #E0E0E0;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FF6600;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2B2B2B;
+            padding: 2rem 0;
+            border-top: 1px solid #AAAAAA;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-content p {
+            font-size: 0.9rem;
+            color: #AAAAAA;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #AAAAAA;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FF6600;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .nav-list {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: #2B2B2B;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+            }
+            
+            .nav-list.active {
+                left: 0;
+            }
+            
+            .nav-item {
+                margin: 1rem 0;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            .nav-toggle.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .nav-toggle.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .nav-toggle.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .features-grid,
+            .screenshots-grid,
+            .why-choose-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+            
+            .btn-large {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
     <!-- Analytics placeholder: Add Google Analytics or other tracking code here -->
+    <!-- Example: Google Analytics 4 -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    -->
+    
+    <!-- Additional performance optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#FF6600">
+    <meta name="msapplication-TileColor" content="#FF6600">
 </head>
 <body>
     <!-- Header/Navbar -->
@@ -94,19 +697,19 @@
             <div class="screenshots-grid">
                 <div class="screenshot-item">
                     <div class="screenshot-placeholder">
-                        <img src="images/toolkit1.png" alt="PC Optimizer Suite Main Dashboard">
+                        <img src="images/toolkit1.png" alt="PC Optimizer Suite Main Dashboard" loading="lazy" width="800" height="600">
                         <div class="screenshot-caption">Main Dashboard</div>
                     </div>
                 </div>
                 <div class="screenshot-item">
                     <div class="screenshot-placeholder">
-                        <img src="images/toolkit2.png" alt="PC Optimizer Suite File Tools">
+                        <img src="images/toolkit2.png" alt="PC Optimizer Suite File Tools" loading="lazy" width="800" height="600">
                         <div class="screenshot-caption">File Tools</div>
                     </div>
                 </div>
                 <div class="screenshot-item">
                     <div class="screenshot-placeholder">
-                        <img src="images/toolkit3.png" alt="PC Optimizer Suite Optimizer Settings">
+                        <img src="images/toolkit3.png" alt="PC Optimizer Suite Optimizer Settings" loading="lazy" width="800" height="600">
                         <div class="screenshot-caption">Optimizer Settings</div>
                     </div>
                 </div>
@@ -189,6 +792,26 @@
     </footer>
 
     <script>
+        // Configuration for GitHub Pages deployment
+        // Get the base path from the current URL
+        const basePath = window.location.pathname.split('/').slice(0, -1).join('/') || '';
+
+        // Function to resolve paths correctly
+        function resolvePath(path) {
+            // If path is already absolute, return as is
+            if (path.startsWith('http') || path.startsWith('//')) {
+                return path;
+            }
+            
+            // If path starts with '/', it's relative to the domain
+            if (path.startsWith('/')) {
+                return basePath + path;
+            }
+            
+            // Otherwise, it's relative to the current directory
+            return path;
+        }
+
         // Simple JavaScript for mobile menu toggle
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
